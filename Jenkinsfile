@@ -14,16 +14,11 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+    
     stage('build jar'){
-      
-      git url: 'https://github.com/cyrille-leclerc/multi-module-maven-project'
-      
-      withMaven(
-        maven: 'maven-3'
-      ){
-        sh 'mvn clean verify'
+      steps {
+        sh 'clean package -Dmaven.test.skip=true'
       }
-     
     }
     
     
