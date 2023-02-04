@@ -15,11 +15,13 @@ pipeline {
             }
         }
     stage('build jar'){
-      steps {
-        script{
-          sh './mvnw clean package'
-        }
+      
+      withMaven(
+        maven: 'maven-3'
+      ){
+        sh 'mvn clean verify'
       }
+     
     }
     
     
