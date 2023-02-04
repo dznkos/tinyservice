@@ -3,7 +3,7 @@ pipeline {
   agent any
    
   stages {  
-    stage("build") {      
+    stage("main") {      
       steps {
         echo 'build completed tiny service! successfully'
       }
