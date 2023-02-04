@@ -16,6 +16,8 @@ pipeline {
         }
     stage('build jar'){
       
+      git url: 'https://github.com/cyrille-leclerc/multi-module-maven-project'
+      
       withMaven(
         maven: 'maven-3'
       ){
