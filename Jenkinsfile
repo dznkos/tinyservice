@@ -20,7 +20,7 @@ pipeline {
     
     stage('build jar'){
       steps {
-        sh 'clean package -Dmaven.test.skip=true'
+        sh 'mvn clean install'
       }
     }
     
