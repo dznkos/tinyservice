@@ -1,11 +1,12 @@
 pipeline {
 
-  agent any 
+  agent any
    
-  stages("build") {
-  
-    steps {
-      echo 'build completed tiny service! successfully'
+  stages {  
+    stage("build") {      
+      steps {
+        echo 'build completed tiny service! successfully'
+      }
     }
   }
 
