@@ -3,7 +3,7 @@ pipeline {
   agent any
   tools{
         maven 'maven3'
-        jdk 'default'
+        jdk 'java17'
     }
   stages {  
     stage("main") {      
