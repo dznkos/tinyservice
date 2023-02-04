@@ -10,13 +10,15 @@ pipeline {
     }
     stage('Build Maven'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/dznkos/tinyservice']]])
+//                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/dznkos/tinyservice']]])
                 sh 'mvn clean install'
             }
         }
     stage('build jar'){
       steps {
-        sh './mvnw clean package'
+        script{
+          sh './mvnw clean package'
+        }
       }
     }
     
